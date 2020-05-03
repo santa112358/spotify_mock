@@ -15,10 +15,10 @@ class MyApp extends StatelessWidget {
           scaffoldBackgroundColor: Colors.black,
           textTheme: TextTheme(
             display1: TextStyle(fontSize: 15),
-            display2: TextStyle(fontSize: 17, fontWeight: FontWeight.bold),
+            display2: TextStyle(fontSize: 15, fontWeight: FontWeight.bold),
             display3: TextStyle(
-              fontSize: 17,
-              color: Colors.black.withOpacity(0.6),
+              fontSize: 15,
+              color: Colors.white.withOpacity(0.4),
             ),
             title: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
           )),

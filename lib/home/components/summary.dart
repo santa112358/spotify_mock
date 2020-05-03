@@ -25,6 +25,25 @@ class _SummaryItem extends StatelessWidget {
     return Container(
       margin: EdgeInsets.all(3),
       color: Colors.red,
+      child: Row(
+        children: <Widget>[
+          Flexible(
+            child: Container(
+              color: Colors.amber,
+            ),
+          ),
+          Flexible(
+            flex: 2,
+            child: Padding(
+              padding: EdgeInsets.only(left: 4),
+              child: Text(
+                "Next Up",
+                style: Theme.of(context).textTheme.display2,
+              ),
+            ),
+          )
+        ],
+      ),
     );
   }
 }

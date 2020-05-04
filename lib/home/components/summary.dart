@@ -48,10 +48,10 @@ class _SummaryItem extends StatelessWidget {
                   left: Radius.circular(8),
                 ),
                 color: Colors.amber,
-              ),
-              child: Image.asset(
-                imagePath,
-                fit: BoxFit.cover,
+                image: DecorationImage(
+                  image: AssetImage(imagePath),
+                  fit: BoxFit.fill,
+                ),
               ),
             ),
           ),

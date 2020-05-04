@@ -1,8 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_mock/dummy_data.dart';
 
 class Summary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _songNames = songNames;
+    final _songImages = songImages;
+    _songNames.shuffle();
+    _songImages.shuffle();
     final gridViewHeight = (MediaQuery.of(context).size.width) / 2 - 14;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16),
@@ -13,23 +18,41 @@ class Summary extends StatelessWidget {
         gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, childAspectRatio: 3),
         itemCount: 6,
-        itemBuilder: (context, i) => _SummaryItem(),
+        itemBuilder: (context, i) =>
+            _SummaryItem(_songNames[i], _songImages[i]),
       ),
     );
   }
 }
 
 class _SummaryItem extends StatelessWidget {
+  final String title;
+  final String imagePath;
+  _SummaryItem(this.title, this.imagePath);
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(3),
-      color: Colors.red,
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.all(
+          Radius.circular(8),
+        ),
+        color: Colors.white.withAlpha(30),
+      ),
       child: Row(
         children: <Widget>[
           Flexible(
             child: Container(
-              color: Colors.amber,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.horizontal(
+                  left: Radius.circular(8),
+                ),
+                color: Colors.amber,
+              ),
+              child: Image.asset(
+                imagePath,
+                fit: BoxFit.cover,
+              ),
             ),
           ),
           Flexible(
@@ -37,7 +60,7 @@ class _SummaryItem extends StatelessWidget {
             child: Padding(
               padding: EdgeInsets.only(left: 4),
               child: Text(
-                "Next Up",
+                title,
                 style: Theme.of(context).textTheme.display2,
               ),
             ),

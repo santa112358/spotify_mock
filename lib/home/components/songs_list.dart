@@ -1,9 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:spotify_mock/dummy_data.dart';
 
 class SongsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final _songImages = songImages;
+    final _playListNames = playListNames;
+    _songImages.shuffle();
+    _playListNames.shuffle();
     return SizedBox(
       height: 200,
       child: ListView.builder(
@@ -13,17 +18,20 @@ class SongsList extends StatelessWidget {
           margin: EdgeInsets.only(left: 16),
           width: 132,
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Container(
-                color: Colors.yellow,
+              Image.asset(
+                _songImages[i],
+                scale: 2,
                 width: 132,
                 height: 132,
+                fit: BoxFit.cover,
               ),
               const SizedBox(
                 height: 4,
               ),
               Text(
-                "Camila Cabello, Bad Bunny, Drake, Selena Gomez",
+                _playListNames[i],
                 style: Theme.of(context).textTheme.display3,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,

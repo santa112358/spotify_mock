@@ -5,10 +5,8 @@ import 'package:spotify_mock/dummy_data.dart';
 class SongsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _songImages = songImages;
-    final _playListNames = playListNames;
-    _songImages.shuffle();
-    _playListNames.shuffle();
+    final _songImages = List.from(songImages)..shuffle();
+    final _playListNames = List.from(playListNames)..shuffle();
     return SizedBox(
       height: 200,
       child: ListView.builder(

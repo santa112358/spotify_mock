@@ -4,10 +4,8 @@ import 'package:spotify_mock/dummy_data.dart';
 class Summary extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _songNames = songNames;
-    final _songImages = songImages;
-    _songNames.shuffle();
-    _songImages.shuffle();
+    final _songImages = List.from(songImages)..shuffle();
+    final _songNames = List.from(songNames)..shuffle();
     final gridViewHeight = (MediaQuery.of(context).size.width) / 2 - 14;
     return Container(
       margin: EdgeInsets.symmetric(horizontal: 16),
@@ -47,7 +45,6 @@ class _SummaryItem extends StatelessWidget {
                 borderRadius: BorderRadius.horizontal(
                   left: Radius.circular(8),
                 ),
-                color: Colors.amber,
                 image: DecorationImage(
                   image: AssetImage(imagePath),
                   fit: BoxFit.fill,

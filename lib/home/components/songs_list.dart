@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:spotify_mock/dummy_data.dart';
 
+/// Shows list of songs
 class SongsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {

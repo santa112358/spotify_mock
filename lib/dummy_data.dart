@@ -1,3 +1,6 @@
+/// Place te dummy data to show the songName and songImage
+
+
 final List<String> songImages = [
   "images/ariana_grande_1.jpg",
   "images/ariana_grande_2.jpg",

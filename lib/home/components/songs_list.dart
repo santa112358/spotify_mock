@@ -31,7 +31,7 @@ class SongsList extends StatelessWidget {
               ),
               Text(
                 _playListNames[i],
-                style: Theme.of(context).textTheme.display3,
+                style: Theme.of(context).textTheme.headline2,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               )

@@ -29,7 +29,7 @@ class RecentPlayedSongsList extends StatelessWidget {
               ),
               Text(
                 _songNames[i],
-                style: Theme.of(context).textTheme.display1,
+                style: Theme.of(context).textTheme.headline4,
                 maxLines: 2,
                 overflow: TextOverflow.ellipsis,
               )

@@ -58,7 +58,7 @@ class _SummaryItem extends StatelessWidget {
               padding: EdgeInsets.only(left: 4),
               child: Text(
                 title,
-                style: Theme.of(context).textTheme.display2,
+                style: Theme.of(context).textTheme.headline3,
               ),
             ),
           )

@@ -16,7 +16,7 @@ class ListTitle extends StatelessWidget {
           padding: const EdgeInsets.only(left: 16),
           child: Text(
             title,
-            style: Theme.of(context).textTheme.title,
+            style: Theme.of(context).textTheme.headline6,
           ),
         ),
         const SizedBox(

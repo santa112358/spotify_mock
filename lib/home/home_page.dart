@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:spotify_mock/home/components/favourite_artists.dart';
 import 'package:spotify_mock/home/components/list_title.dart';
 import 'package:spotify_mock/home/components/recent_played_songs_list.dart';
 import 'package:spotify_mock/home/components/songs_list.dart';
@@ -27,8 +28,8 @@ class HomePage extends StatelessWidget {
                   SongsList(),
                   ListTitle("Popular playlists"),
                   SongsList(),
-                  ListTitle("Best of artists"),
-                  SongsList(),
+                  ListTitle("Your favourite artists"),
+                  FavouriteArtists(),
                   ListTitle("Jump back in"),
                   SongsList(),
                   ListTitle("Today's dance music"),

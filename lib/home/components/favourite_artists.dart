@@ -1,10 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:spotify_mock/dummy_data.dart';
 import 'package:spotify_mock/home/components/constants.dart';
 
-/// Shows list of songs
-class SongsList extends StatelessWidget {
+import '../../dummy_data.dart';
+
+class FavouriteArtists extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final _songImages = List.from(songImages)..shuffle();
@@ -20,12 +19,16 @@ class SongsList extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
-              Image.asset(
-                _songImages[i],
-                scale: 2,
+              Container(
                 width: songImageSize,
                 height: songImageSize,
-                fit: BoxFit.cover,
+                decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    image: DecorationImage(
+                      image: AssetImage(_songImages[i]),
+                      scale: 2,
+                      fit: BoxFit.cover,
+                    )),
               ),
               const SizedBox(
                 height: 4,

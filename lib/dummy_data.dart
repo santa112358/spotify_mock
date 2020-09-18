@@ -50,3 +50,12 @@ final List<String> playListNames = [
   "Drake, Leo Messi, Sergio Ramos, Samuel Umtiti, Memphis Depay",
   "Conan Gray, Santa Takahashi, Normani, Taylor Swift, Why Don't we",
 ];
+
+final List<String> listTitles = [
+  "Feel good music!",
+  "Popular playlists",
+  "Your favourite artists",
+  "Jump back in",
+  "Today's dance music",
+  "Always fresh and hand-curated"
+];

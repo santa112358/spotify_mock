@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:spotify_mock/home/components/favourite_artists.dart';
+import 'package:spotify_mock/dummy_data.dart';
 import 'package:spotify_mock/home/components/list_title.dart';
 import 'package:spotify_mock/home/components/recent_played_songs_list.dart';
 import 'package:spotify_mock/home/components/songs_list.dart';
@@ -16,29 +16,58 @@ class HomePage extends StatelessWidget {
         child: Stack(
           children: <Widget>[
             const _Shadow(),
-            SingleChildScrollView(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: <Widget>[
-                  ListTitle("Good evening"),
-                  Summary(),
-                  ListTitle("Recently played"),
-                  RecentPlayedSongsList(),
-                  ListTitle("Feel good music!"),
-                  SongsList(),
-                  ListTitle("Popular playlists"),
-                  SongsList(),
-                  ListTitle("Your favourite artists"),
-                  FavouriteArtists(),
-                  ListTitle("Jump back in"),
-                  SongsList(),
-                  ListTitle("Today's dance music"),
-                  SongsList(),
-                  ListTitle("Always fresh and hand-curated"),
-                  SongsList(),
-                ],
-              ),
+            CustomScrollView(
+              slivers: [
+                SliverList(
+                  delegate: SliverChildListDelegate(
+                    [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ListTitle("Good evening"),
+                          Summary(),
+                          ListTitle("Recently played"),
+                          RecentPlayedSongsList(),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                SliverList(
+                  delegate: SliverChildBuilderDelegate(
+                    (context, index) {
+                      return Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ListTitle(listTitles[index]),
+                          SongsList(),
+                        ],
+                      );
+                    },
+                    childCount: listTitles.length,
+                  ),
+                ),
+              ],
             ),
+//            SingleChildScrollView(
+//              child: Column(
+//                crossAxisAlignment: CrossAxisAlignment.start,
+//                children: <Widget>[
+//                  ListTitle("Feel good music!"),
+//                  SongsList(),
+//                  ListTitle("Popular playlists"),
+//                  SongsList(),
+//                  ListTitle("Your favourite artists"),
+//                  FavouriteArtists(),
+//                  ListTitle("Jump back in"),
+//                  SongsList(),
+//                  ListTitle("Today's dance music"),
+//                  SongsList(),
+//                  ListTitle("Always fresh and hand-curated"),
+//                  SongsList(),
+//                ],
+//              ),
+//            ),
           ],
         ),
       ),

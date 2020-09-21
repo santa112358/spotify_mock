@@ -6,11 +6,15 @@ import '../dummy_data.dart';
 class SongPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final _songImages = List.from(songImages)..shuffle();
-    final _playListNames = List.from(playListNames)..shuffle();
+    final _songImages = List.from(songImages)
+      ..shuffle();
+    final _playListNames = List.from(playListNames)
+      ..shuffle();
     return Container(
       decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        color: Theme
+            .of(context)
+            .scaffoldBackgroundColor,
         borderRadius: BorderRadius.circular(25),
       ),
       padding: const EdgeInsets.symmetric(vertical: 32, horizontal: 20)
@@ -39,7 +43,7 @@ class SongPage extends StatelessWidget {
               ),
               Padding(
                 padding:
-                    const EdgeInsets.symmetric(horizontal: 8, vertical: 32),
+                const EdgeInsets.symmetric(horizontal: 8, vertical: 32),
                 child: SizedBox(
                   width: double.infinity,
                   child: Image.asset(
